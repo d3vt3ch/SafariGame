@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -139,4 +141,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('game').classList
 })();
 </script>
 </body>
-</html>
+</html>'''
+path = Path("/mnt/data/sunny_safari_kids_game.html")
+path.write_text(html, encoding="utf-8")
+print(f"Created {path} ({len(html):,} characters)")
